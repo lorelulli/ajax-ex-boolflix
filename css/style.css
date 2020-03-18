@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.film-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card{
+    width: 400px;
+    border: 1px solid green;
+    margin: 20px;
+    padding: 10px;
+}
+
+button{
+    width: 20px;
+}
+
+.searchbar{
+    margin: 10px;
+}

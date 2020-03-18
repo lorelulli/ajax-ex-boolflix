@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
+
+        <title>ajax-ex-boolflix</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="searchbar">
+                <input type="text" name="" value="">
+                <button type="button" name="button"></button>
+
+            </div>
+
+            <div class="film-card">
+
+            </div>
+
+        </div>
+
+
+
+        <script id="film-template" type="text/x-handlebars-template">
+
+            <div class="card" data-codice="">
+
+                <h2> Titolo: {{titolo}}</h2>
+                <p> Titolo originale: {{titoloOriginale}}</p>
+                <p> Lingua: {{lingua}}</p>
+                <p> Voto: {{voto}}</p>
+
+            </div>
+
+
+        </script>
+
+
+
+
+        <script src="js/script.js" charset="utf-8"></script>
+    </body>
+</html>
