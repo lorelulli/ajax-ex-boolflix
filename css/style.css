@@ -24,6 +24,9 @@
     border: 1px solid green;
     margin: 20px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 button{
@@ -32,4 +35,16 @@ button{
 
 .searchbar{
     margin: 10px;
+}
+#poster{
+    object-fit: contain;
+    padding: 10px;
+}
+#flags{
+    width: 25px;
+    padding-bottom: 10px;
+}
+
+h2{
+    padding-bottom: 10px;
 }
