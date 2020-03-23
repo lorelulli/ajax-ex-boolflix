@@ -5,13 +5,14 @@ $(document).ready(function () {
     var bandiere = ['it','en','es','de','fr','ja']
     console.log(bandiere);
 
-    function creaFilm(tit, titOr, lan , vote, img) {
+    function creaFilm(tit, titOr, lan , vote, img, ov) {
         var datiFilm = {                                 // Assemblo in un oggetto il contenuto del messaggio
             titolo: tit,
             titoloOriginale: titOr,
             lingua: lan,
             voto: vote,
-            immagine: img
+            immagine: img,
+            overview: ov
         };
 
         var templateFilm = template(datiFilm);      // Popolo il template di handlebars con il contenuto del messaggio
@@ -74,6 +75,7 @@ $(document).ready(function () {
                         linguaFilm = 'df'
 
                     }
+                    var overviewFilm = film.overview;
                     var immagineFilm = film.poster_path;
                     var votoFilm = Math.ceil(film.vote_average / 2);
                     switch (votoFilm) {
@@ -105,7 +107,7 @@ $(document).ready(function () {
 
                     }
 
-                    creaFilm(titoloFilm, originaleFilm, linguaFilm, votoFilm, immagineFilm)
+                    creaFilm(titoloFilm, originaleFilm, linguaFilm, votoFilm, immagineFilm, overviewFilm)
                 }
 
             },
@@ -134,7 +136,40 @@ $(document).ready(function () {
                     var titoloTvFilm = tvFilm.name;
                     var originaleTvFilm = tvFilm.original_name;
                     var linguaTvFilm = tvFilm.original_language;
+                    switch (linguaTvFilm) {
+                        case 'it':
+
+                            break;
+                        case 'en':
+
+                            break;
+                        case 'de':
+
+                            break;
+                        case 'es':
+
+                            break;
+                        case 'fr':
+
+                            break;
+                        case 'ja':
+
+                            break;
+                        case 'ko':
+
+                            break;
+                        case 'ru':
+
+                            break;
+                        case 'zh':
+
+                            break;
+                        default:
+                        linguaTvFilm = 'df'
+
+                    }
                     var immagineTvFilm = tvFilm.poster_path;
+                    var overviewTvFilm = tvFilm.overview;
                     var votoTvFilm = Math.ceil(tvFilm.vote_average / 2);
                     switch (votoTvFilm) {
                         case 1:

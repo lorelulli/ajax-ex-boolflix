@@ -12,13 +12,27 @@
     <body>
         <div class="container">
 
-            <div class="searchbar">
-                <input type="text" name="" value="">
-                <button type="button" name="button"></button>
+            <div class="header-container">
+
+                <div class="header">
+
+                    <div class="logo">
+                        <a href="https://www.freepnglogos.com/images/netflix-logo-png-2562.html" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" width="110" alt="netflix logo" /></a>
+                    </div>
+                    <div class="searchbar">
+                        <input type="text" name="" value="">
+                        <button type="button" name="button"> Search</button>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="film-card">
+            <div class="fullwidth-film">
+                <div class="film-card">
+
+                </div>
 
             </div>
 
@@ -28,18 +42,30 @@
 
         <script id="film-template" type="text/x-handlebars-template">
 
-            <div class="card" data-codice="">
 
-                <h2> Titolo: {{titolo}}</h2>
-                <p> Titolo originale: {{titoloOriginale}}</p>
-                <img id="poster" src="https://image.tmdb.org/t/p/w300/{{immagine}}" alt="">
-                <img id="flags" src="img/{{lingua}}.png" alt="">
-                <p> Voto: {{{voto}}}</p>
+            <div class="container-card">
+
+                <div class="card" data-codice="">
+
+
+                    <img id="poster" src="https://image.tmdb.org/t/p/w300/{{immagine}}" alt="">
+                    <div class="overlay">
+                        <h2> Titolo: {{titolo}}</h2>
+                        <p> Titolo originale: {{titoloOriginale}}</p>
+                        <img id="flags" src="img/{{lingua}}.png" alt="">
+                        <p> Voto: {{{voto}}}</p>
+                        <p> Overview: {{overview}}</p>
+
+                    </div>
+
+
+
+                </div>
 
             </div>
 
-
         </script>
+
 
 
 
