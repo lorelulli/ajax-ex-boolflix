@@ -114,3 +114,7 @@ p{
     min-width: 100vw;
     background-color: #131313;
 }
+#poster{
+    height: 100%;
+    width: 100%;
+}

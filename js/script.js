@@ -5,14 +5,16 @@ $(document).ready(function () {
     var bandiere = ['it','en','es','de','fr','ja']
     console.log(bandiere);
 
-    function creaFilm(tit, titOr, lan , vote, img, ov) {
+    function creaFilm(tit, titOr, lan , vote, img, im, ov, errore) {
         var datiFilm = {                                 // Assemblo in un oggetto il contenuto del messaggio
             titolo: tit,
             titoloOriginale: titOr,
             lingua: lan,
             voto: vote,
             immagine: img,
-            overview: ov
+            img: im,
+            overview: ov,
+
         };
 
         var templateFilm = template(datiFilm);      // Popolo il template di handlebars con il contenuto del messaggio
@@ -22,7 +24,7 @@ $(document).ready(function () {
     $('button').click(function () {
         var query = $('input').val();
         console.log(query);
-        $(".card").hide();
+        $(".card").detach();
         $.ajax({
             url: 'https://api.themoviedb.org/3/search/movie',
             data:{
@@ -75,8 +77,16 @@ $(document).ready(function () {
                         linguaFilm = 'df'
 
                     }
+                    var urlImg = 'https://image.tmdb.org/t/p/w300/'
                     var overviewFilm = film.overview;
                     var immagineFilm = film.poster_path;
+                    if (immagineFilm == null) {
+                        urlImg = 'img/';
+                        immagineFilm = 'error.jpg'
+
+                    }
+                    console.log(immagineFilm);
+
                     var votoFilm = Math.ceil(film.vote_average / 2);
                     switch (votoFilm) {
                         case 1:
@@ -107,7 +117,7 @@ $(document).ready(function () {
 
                     }
 
-                    creaFilm(titoloFilm, originaleFilm, linguaFilm, votoFilm, immagineFilm, overviewFilm)
+                    creaFilm(titoloFilm, originaleFilm, linguaFilm, votoFilm, immagineFilm, urlImg, overviewFilm)
                 }
 
             },
@@ -168,7 +178,13 @@ $(document).ready(function () {
                         linguaTvFilm = 'df'
 
                     }
+                    var urlImg = 'https://image.tmdb.org/t/p/w300/'
                     var immagineTvFilm = tvFilm.poster_path;
+                    if (immagineTvFilm == null) {
+                        urlImg = 'img/';
+                        immagineTvFilm = 'error.jpg'
+
+                    }
                     var overviewTvFilm = tvFilm.overview;
                     var votoTvFilm = Math.ceil(tvFilm.vote_average / 2);
                     switch (votoTvFilm) {
@@ -200,7 +216,9 @@ $(document).ready(function () {
 
                     }
 
-                    creaFilm(titoloTvFilm, originaleTvFilm, linguaTvFilm, votoTvFilm, immagineTvFilm)
+                    console.log(immagineTvFilm);
+
+                    creaFilm(titoloTvFilm, originaleTvFilm, linguaTvFilm, votoTvFilm, immagineTvFilm, urlImg, overviewTvFilm)
                 }
 
             },
